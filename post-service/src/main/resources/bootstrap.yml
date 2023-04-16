@@ -1,0 +1,18 @@
+server:
+  port: 9393
+spring:
+  application:
+    name: post-service
+  profiles:
+    active: local
+  cloud:
+    config:
+      fail-fast: true
+      discovery:
+        enabled: true
+        service-id: external-config
+eureka:
+  client:
+    enabled: true
+    service-url:
+      defaultZone: http://localhost:8888/eureka/

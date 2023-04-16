@@ -1,0 +1,17 @@
+server:
+  port: 8989
+spring:
+  application:
+    name: external-config
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file:./config-service/config
+eureka:
+  client:
+    enabled: true
+    service-url:
+      defaultZone: http://localhost:8888/eureka/
